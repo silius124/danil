@@ -23,7 +23,7 @@ export default function Home(){
     return (<div className="max-w-[135.8rem] mx-auto p-2">
         <Header />
         <ul className="flex flex-wrap w-full gap-11 justify-center items-center">
-            {images.map((image)=> <li key={image.id} className="w-[20rem] xl:w-[43rem] h-[21.5rem] mb-5" onClick={() => handleClickImage(image.id)}>
+            {images.map((image)=> <li key={image.id} className="w-[43rem] h-[21.5rem] mb-5" onClick={() => handleClickImage(image.id)}>
                 <div className={`rounded-2xl w-full h-full bg-cover bg-center cursor-pointer duration-200 hover:scale-95`} style={{backgroundImage: `url(${image.image})`}}></div>
                 <div className="text-[1.4rem]">id: {image.id}</div>
             </li>)}

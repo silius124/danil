@@ -17,8 +17,8 @@ export default function ModalImage({closeModel, image}){
                 },1000)
             }
     }
-    return(<div className="fixed w-full z-50 inset-0 flex items-center justify-center bg-[#6B7280BF] text-white">
-        <div className="xl:w-[69.3rem] xl:h-[85.2rem] flex flex-col items-center bg-white rounded-2xl w-[90%] px-10 py-5">
+    return(<div className="fixed w-full z-50 inset-0 flex items-center justify-center bg-[#6B7280BF] text-white" onClick={()=>{closeModel()}} >
+        <div className="xl:w-[69.3rem] xl:h-[85.2rem] flex flex-col items-center bg-white rounded-2xl w-[90%] px-10 py-5" onClick={(e)=>{e.stopPropagation()}}>
             <img src={image.largeImage} alt="" className="rounded-4xl w-[40.5rem] mb-20"/>
             <div className="text-[#374151] w-full mb-10"> 
                 <label className="text-[1.4rem] font-medium">Comment</label>
@@ -28,8 +28,6 @@ export default function ModalImage({closeModel, image}){
             {isFail==='fail' && <p className="text-[1.4rem] text-red-500">Извините комментарий не сохранился</p>}
             {isFail==='successed' && <p className="text-[1.4rem] text-green-500">Отправлено</p>}
             <button onClick={addCommentApi} className="p-1 text-[1.4rem] mb-5 bg-indigo-600 w-[6.7rem] h-[3.8rem] rounded-xl hover:bg-indigo-900 cursor-pointer">Save</button>
-            
-            <button onClick={closeModel} className="p-1 text-[1.4rem]  mb-5 bg-indigo-600 w-[6.7rem] h-[3.8rem] rounded-xl hover:bg-indigo-900 cursor-pointer">Close</button>
             <div className="text-black flex flex-col items-start w-full">
                 <div className="mb-5">Comments</div>
                 <ul>
